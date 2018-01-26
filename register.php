@@ -6,7 +6,7 @@
     $email = $_POST['email'];
         $password = $_POST['password'];
  
-        $query = "INSERT INTO `user` (username, password, email) VALUES ('$username', '$password', '$email')";
+        $query = "INSERT INTO `User` (username, password, email) VALUES ('$username', '$password', '$email')";
         $result = mysqli_query($connection, $query);
         if($result){
             $smsg = "User Created Successfully.";
@@ -40,7 +40,6 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
 
-?>
 <link rel="stylesheet" href="styles.css" >
 
 <!-- Latest compiled and minified JavaScript -->
