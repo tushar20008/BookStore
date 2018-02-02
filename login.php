@@ -28,9 +28,9 @@ if (isset($_SESSION['username'])){
   $role = mysqli_fetch_array($result)[0];
 
   if($role == 'customer')
-    header('Location: ' .'customer/home.html');
+    header('Location: ' .'customer/home.php');
   else
-    header('Location: ' .'admin/home.html');
+    header('Location: ' .'admin/home.php');
 }else{
 //3.2 When the user visits the page first time, simple login form will be displayed.
 ?>
