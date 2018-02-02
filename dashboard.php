@@ -8,6 +8,7 @@
 
 <?php
 	if($role == 'customer'){
+		header('Location: ' .'index.html');
 ?>
 
 	Welcome Noob
