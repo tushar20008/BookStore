@@ -22,7 +22,15 @@ $fmsg = "Invalid Login Credentials.";
 }
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
-  require('dashboard.php');
+  
+  $query = "SELECT role FROM `User` WHERE username='$username'";
+  $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+  $role = mysqli_fetch_array($result)[0];
+
+  if($role == 'customer')
+    header('Location: ' .'customer/home.html');
+  else
+    header('Location: ' .'admin/home.html');
 }else{
 //3.2 When the user visits the page first time, simple login form will be displayed.
 ?>
