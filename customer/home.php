@@ -48,12 +48,12 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Edit</a></li>
-						<li><a href="#">Search</a></li>
-						<li><a href="#">Borrow</a></li>
-						<li><a href="#">Status</a></li>
-						<li><a href="#">Faq</a></li>
+						<li><a href="home.php">Home</a></li>
+						<li><a href="edit.php">Edit</a></li>
+						<li><a href="search.php">Search</a></li>
+						<li><a href="borrow.php">Borrow</a></li>
+						<li><a href="status.php">Status</a></li>
+						<li><a href="faq.php">Faq</a></li>
 					</ul>
 				</div>
 			</div>
