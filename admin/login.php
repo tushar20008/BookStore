@@ -68,7 +68,7 @@ if(isset($_POST["submit1"]))
 {
     $pwd=$_POST["password"];
     $count=0;
-    $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]' && password='$pwd'");
+    $res=mysqli_query($link,"select * from admin where username='$_POST[username]' && password='$pwd'");
     $count=mysqli_num_rows($res);
      if($count==0)
      {
