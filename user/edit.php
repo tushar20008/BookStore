@@ -4,7 +4,7 @@
         <div class="card card-signup" data-background-color="orange">
             <form class="form" method="post" action="">
                 <div class="header text-center">
-                    <h4 class="title title-up">Personal Information</h4>
+                    <h4 id="edit" class="title title-up">Personal Information</h4>
                 </div>
                 <div class="card-body">
                     <div class="input-group form-group-no-border">
@@ -76,7 +76,11 @@
                         </div>
             <?php
                     }
-
+            ?>
+                <script type="text/javascript">
+                            window.location="#edit";
+                </script>
+            <?php
                 }
             ?>
         </div>

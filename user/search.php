@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-    <h3 class="title">Search Books</h3>
+    <h3 id="searchedBooks" class="title">Search Books</h3>
     <form class="form" method="post" action="">
         <div class="row">
             <div class="form-group col-sm-6 col-lg-3">
@@ -43,6 +43,11 @@
             echo "</tr>";
             $rowNumber++;
         }
+?>
+    <script type="text/javascript">
+        window.location="#searchedBooks";
+    </script>
+<?php
     }
 ?>  
         </tbody>
