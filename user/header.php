@@ -1,10 +1,27 @@
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
-include "connection.php";
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
+    if(!isset($_SESSION["username"])){
+?>
+    <script type="text/javascript">
+        window.location="login.php";
+    </script>
+?>
+<?php
+    }
+    include "connection.php";
+    $res = mysqli_query($link, "select * from user_registration where username='$_SESSION[username]'");
+    $userDetails = mysqli_fetch_array($res);
+    $name = $userDetails["firstname"] . " ". $userDetails["lastname"];
+    $username = $userDetails["username"];
+    $booksIssued = $userDetails["booksIssued"];
+    $booksRead = $userDetails["booksRead"];
+    $profileImage = $userDetails["image"];
+    if(!$profileImage) {
+        $profileImage = "../assets/img/default-avatar.png";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,26 +43,9 @@ include "connection.php";
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
-            <div class="dropdown button-dropdown">
-                <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                    <span class="button-bar"></span>
-                    <span class="button-bar"></span>
-                    <span class="button-bar"></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-header">Dropdown header</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">One more separated link</a>
-                </div>
-            </div>
             <div class="navbar-translate">
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
-                    Now Ui Kit
+                <a class="navbar-brand" rel="tooltip">
+                    Nav Bar
                 </a>
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar bar1"></span>
@@ -53,30 +53,25 @@ include "connection.php";
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">       
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Back to Kit</a>
+                        <a class="nav-link" href="edit.php">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues">Have an issue?</a>
+                        <a class="nav-link" href="search.php">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                            <p class="d-lg-none d-xl-none">Twitter</p>
+                        <a class="nav-link" href="issued.php">Issued Books</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="notification.php" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
+                            <i class="now-ui-icons ui-1_email-85"></i>
                         </a>
-                    </li>
+                    </li> 
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                            <p class="d-lg-none d-xl-none">Facebook</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                            <i class="fa fa-instagram"></i>
-                            <p class="d-lg-none d-xl-none">Instagram</p>
+                        <a class="nav-link" href="logout.php" rel="tooltip" title="Logout" data-placement="bottom">
+                            <i class="now-ui-icons media-1_button-power"></i>
                         </a>
                     </li>
                 </ul>
@@ -84,3 +79,41 @@ include "connection.php";
         </div>
     </nav>
     <!-- End Navbar -->
+
+    <div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/login.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <div class="photo-container">
+                    <img src=<?php echo $profileImage;?> alt="profile image">
+                </div>
+                <h3 class="title">
+                    <?php echo $name;?>
+                </h3>
+                <p class="category">
+                    <?php echo $username;?>
+                </p>
+                <div class="content">
+                    <div class="social-description">
+                        <h2>
+                            <?php echo $booksIssued;?>
+                        </h2>
+                        <p>Books Issued</p>
+                    </div>
+                    <div class="social-description">
+                        <h2>
+                            <?php echo $booksRead;?>
+                        </h2>
+                        <p>Books Read</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+            <div class="container">
+                <div class="button-container">
+                    <a href="#button" class="btn btn-primary btn-round btn-lg">Chat with Us</a>
+                </div>
