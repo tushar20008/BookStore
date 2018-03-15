@@ -18,7 +18,9 @@
         echo "<tr>";
         echo "<th scope='row'>". $rowNumber. "</th>";
         echo "<td>" . $row["bookCode"] . "</td>";
-        echo "<td>" . $row["title"] . "</td>";
+
+        $bookInfo = mysqli_fetch_array(mysqli_query($link,"select * from add_books where bookCode='$row[bookCode]'"));
+        echo "<td>" . $bookInfo["title"] . "</td>";
         echo "<td>" . $row["issueDate"] . "</td>";
         echo "<td>" . $row["returnDate"] . "</td>";
         echo "</tr>";
