@@ -1,3 +1,5 @@
+            </div>
+        </div>
         <footer class="footer footer-default">
             <div class="container">
                 <nav>

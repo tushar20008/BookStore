@@ -33,5 +33,4 @@
         echo "<h6 class='text-success' style='text-align:center'> Nothing Issued </h6>";
     }
 ?>
-</div>
 <?php include "footer.php"; ?>
