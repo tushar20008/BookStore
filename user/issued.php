@@ -1,18 +1,15 @@
 <?php
-session_start();
-if(!isset($_SESSION["username"]))
-{
-    ?>
-    <script type="text/javascript">
-        window.location="login.php";
-
-    </script>
-    <?php
-
-}
-include "connection.php";
-include "header.php";
-
+    session_start();
+    if(!isset($_SESSION["username"]))
+    {
+?>
+        <script type="text/javascript">
+            window.location="login.php";
+        </script>
+<?php
+    }
+    include "connection.php";
+    include "header.php";
 ?>
 
     <!-- page content area main -->
@@ -89,7 +86,4 @@ include "header.php";
     </div>
     <!-- /page content -->
 
-
-<?php
-include "footer.php";
-?>
+<?php include "footer.php"; ?>
