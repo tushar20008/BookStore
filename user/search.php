@@ -14,11 +14,10 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Cover Page</th>
-                <th scope="col">Book Code</th>
+                <th scope="col">Cover</th>
+                <th scope="col">Code</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
-                <th scope="col">Qty</th>
                 <th></th>
             </tr>
         </thead>
@@ -31,12 +30,16 @@
         while($row=mysqli_fetch_array($res)){
             echo "<tr>";
             echo "<th scope='row'>". $rowNumber. "</th>";
-            echo "<td> <img src=" . $row["image"] . " alt='Rounded Image' class='rounded'></td>";
+            echo "<td> <img src=" . $row["image"] . " alt='Rounded Image' class='col-sm-3'></td>";
             echo "<td>" . $row["bookCode"] . "</td>";
             echo "<td>" . $row["title"] . "</td>";
             echo "<td>" . $row["author"] . "</td>";
-            echo "<td>" . $row["qty"] . "</td>";
-            echo "<td> Checkout </td>";
+            echo 
+                "<td> 
+                    <a class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
+                        <i class='now-ui-icons ui-1_check'></i>
+                    </a> 
+                </td>";
             echo "</tr>";
             $rowNumber++;
         }
@@ -46,6 +49,10 @@
     </table>
 <?php if($rowNumber == 1){
         echo "<h6 class='text-danger' style='text-align:center'> Nothing Found </h6>";
+    }
+?>
+<?php if($rowNumber == 0){
+        echo "<h6 class='text-info' style='text-align:center'> Run Search First </h6>";
     }
 ?>
 <?php include "footer.php"; ?>
