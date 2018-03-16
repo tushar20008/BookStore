@@ -37,7 +37,7 @@
             if($row["qty"] > 0){
                 echo 
                 "<td> 
-                    <a href='checkout.php' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
+                    <a href='checkout.php?id=". echo $row["bookCode"]; . "' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_check'></i>
                     </a> 
                 </td>";
