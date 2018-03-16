@@ -30,14 +30,14 @@
         while($row=mysqli_fetch_array($res)){
             echo "<tr>";
             echo "<th scope='row'>". $rowNumber. "</th>";
-            echo "<td> <img src=" . $row["image"] . " alt='Rounded Image' class='col-sm-3'></td>";
+            echo "<td> <img src='../assets/img/books/" . $row["image"] . "' alt='Rounded Image' class='col-sm-3'></td>";
             echo "<td>" . $row["bookCode"] . "</td>";
             echo "<td>" . $row["title"] . "</td>";
             echo "<td>" . $row["author"] . "</td>";
             if($row["qty"] > 0){
                 echo 
                 "<td> 
-                    <a href='checkout.php?id=". echo $row["bookCode"]; . "' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
+                    <a href='checkout.php?id=". $row["bookCode"] . "' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_check'></i>
                     </a> 
                 </td>";
