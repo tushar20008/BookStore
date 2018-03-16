@@ -11,7 +11,7 @@
                         <img class="photo-container" src=<?php echo $profileImage;?> alt="profile image">
                     </div>
                     <div class="input-group form-group-no-border">
-                        <input type="file" name="image">
+                        <input class="btn btn-primary btn-round" type="file" name="image">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Username :</span>
