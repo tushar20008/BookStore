@@ -2,11 +2,17 @@
     <h3 class="title">Edit Profile</h3>
     <div class="row">
         <div class="card card-signup" data-background-color="orange">
-            <form class="form" method="post" action="">
+            <form class="form" enctype="multipart/form-data" method="post" action="">
                 <div class="header text-center">
-                    <h4 id="edit" class="title title-up">Personal Information</h4>
+                    <h4 class="title title-up">Personal Information</h4>
                 </div>
                 <div class="card-body">
+                    <div class="input-group form-group-no-border">
+                        <img class="photo-container" src=<?php echo $profileImage;?> alt="profile image">
+                    </div>
+                    <div class="input-group form-group-no-border">
+                        <input type="file" name="image">
+                    </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Username :</span>
                         <input type="text" class="form-control" name ="username" value=<?php echo $userDetails["username"];?>>
@@ -25,7 +31,7 @@
                     </div>
                 </div>
                 <div class="footer text-center">
-                    <button class="btn btn-neutral btn-round btn-lg" name="submit">Update</button>
+                    <button id="edit" class="btn btn-neutral btn-round btn-lg" name="submit">Update</button>
                 </div>
             </form>
             <?php
@@ -57,9 +63,10 @@
                         </div>
             <?php     
                     }
-                    else{
-                        
+                    else{ 
                         mysqli_query($link,"update user_registration set firstname='$_POST[firstname]', lastname='$_POST[lastname]', username='$_POST[username]', password='$_POST[password]' where username='$_POST[username]'") or die(mysqli_error($link));
+                        $dst="./../assets/img/profile/".$_POST['username'].".png";
+                        move_uploaded_file($_FILES["image"]["tmp_name"],$dst);
             ?>
                         <div class="alert alert-success" role="alert">
                             <div class="container">

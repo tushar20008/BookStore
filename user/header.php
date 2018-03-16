@@ -18,8 +18,8 @@
     $username = $userDetails["username"];
     $booksIssued = $userDetails["booksIssued"];
     $booksRead = $userDetails["booksRead"];
-    $profileImage = $userDetails["image"];
-    if(!$profileImage) {
+    $profileImage = "../assets/img/profile/" . $userDetails["image"];
+    if(!$userDetails["image"]) {
         $profileImage = "../assets/img/default-avatar.png";
     }
 ?>
@@ -86,8 +86,8 @@
         </div>
         <div class="container">
             <div class="content-center">
-                <div class="photo-container">
-                    <img src=<?php echo $profileImage;?> alt="profile image">
+                <div>
+                    <img class="photo-container" src=<?php echo $profileImage;?> alt="profile image">
                 </div>
                 <h3 class="title">
                     <?php echo $name;?>
