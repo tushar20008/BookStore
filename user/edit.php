@@ -64,9 +64,15 @@
             <?php     
                     }
                     else{ 
-                        mysqli_query($link,"update user_registration set firstname='$_POST[firstname]', lastname='$_POST[lastname]', username='$_POST[username]', password='$_POST[password]' where username='$_POST[username]'") or die(mysqli_error($link));
-                        $dst="./../assets/img/profile/".$_POST['username'].".png";
-                        move_uploaded_file($_FILES["image"]["tmp_name"],$dst);
+                        $imageName = $_POST['username'].".png";
+                        $dst="./../assets/img/profile/".$imageName;
+                        if(!move_uploaded_file($_FILES["image"]["tmp_name"],$dst)){
+                            $imageName = '';
+                        }
+                        
+                        mysqli_query($link,"update user_registration set firstname='$_POST[firstname]', lastname='$_POST[lastname]', username='$_POST[username]', password='$_POST[password]', image='$imageName' where username='$_POST[username]'") or die(mysqli_error($link));
+                        
+                        
             ?>
                         <div class="alert alert-success" role="alert">
                             <div class="container">
