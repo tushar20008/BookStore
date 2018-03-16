@@ -12,15 +12,13 @@
 <?php
     }
     include "connection.php";
-    $res = mysqli_query($link, "select * from user_registration where username='$_SESSION[username]'");
+    $res = mysqli_query($link, "select * from admin where username='$_SESSION[username]'");
     $userDetails = mysqli_fetch_array($res);
     $name = $userDetails["firstname"] . " ". $userDetails["lastname"];
     $username = $userDetails["username"];
-    $booksIssued = $userDetails["booksIssued"];
-    $booksRead = $userDetails["booksRead"];
     $profileImage = "../assets/img/profile/" . $userDetails["image"];
     if(!$userDetails["image"]) {
-        $profileImage = "../assets/img/default-avatar.png";
+        $profileImage = "../assets/img/profile/default-avatar.png";
     }
 ?>
 <!DOCTYPE html>
@@ -59,11 +57,11 @@
                         <a class="nav-link" href="edit.php">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php">Search</a>
+                        <a class="nav-link" href="books.php">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="issued.php">Issued Books</a>
-                    </li> 
+                        <a class="nav-link" href="search.php">Search</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="notification.php" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
                             <i class="now-ui-icons ui-1_email-85"></i>
@@ -95,20 +93,6 @@
                 <p class="category">
                     <?php echo $username;?>
                 </p>
-                <div class="content">
-                    <div class="social-description">
-                        <h2>
-                            <?php echo $booksIssued;?>
-                        </h2>
-                        <p>Books Issued</p>
-                    </div>
-                    <div class="social-description">
-                        <h2>
-                            <?php echo $booksRead;?>
-                        </h2>
-                        <p>Books Read</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

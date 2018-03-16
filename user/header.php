@@ -20,7 +20,7 @@
     $booksRead = $userDetails["booksRead"];
     $profileImage = "../assets/img/profile/" . $userDetails["image"];
     if(!$userDetails["image"]) {
-        $profileImage = "../assets/img/default-avatar.png";
+        $profileImage = "../assets/img/profile/default-avatar.png";
     }
 ?>
 <!DOCTYPE html>
