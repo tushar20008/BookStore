@@ -30,7 +30,7 @@
         </tbody>
     </table>
 <?php if($rowNumber == 1){
-        echo "<h6 class='text-success' style='text-align:center'> Nothing Issued </h6>";
+        echo "<h6 class='text-success text-center'> Nothing Issued </h6>";
     }
 ?>
 <?php include "footer.php"; ?>

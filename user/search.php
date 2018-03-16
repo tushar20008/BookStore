@@ -64,11 +64,11 @@
         </tbody>
     </table>
 <?php if($rowNumber == 1){
-        echo "<h6 class='text-danger' style='text-align:center'> Nothing Found </h6>";
+        echo "<h6 class='text-danger text-center'> Nothing Found </h6>";
     }
 ?>
 <?php if($rowNumber == 0){
-        echo "<h6 class='text-info' style='text-align:center'> Run Search First </h6>";
+        echo "<h6 class='text-info text-center'> Run Search First </h6>";
     }
 ?>
 <?php include "footer.php"; ?>
