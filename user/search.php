@@ -34,12 +34,23 @@
             echo "<td>" . $row["bookCode"] . "</td>";
             echo "<td>" . $row["title"] . "</td>";
             echo "<td>" . $row["author"] . "</td>";
-            echo 
+            if($row["qty"] > 0){
+                echo 
                 "<td> 
-                    <a class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
+                    <a href='checkout.php' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_check'></i>
                     </a> 
                 </td>";
+            }
+            else{
+                echo 
+                "<td> 
+                    <a class='text-info' rel='tooltip' title='Unavailable' data-placement='bottom'>
+                        <i class='now-ui-icons ui-1_simple-remove'></i>
+                    </a> 
+                </td>";
+            }
+            
             echo "</tr>";
             $rowNumber++;
         }
