@@ -81,7 +81,7 @@
                         $_SESSION["username"]=$_POST["username"];
             ?>
             <script type="text/javascript">
-                window.location="displayBooks.php";
+                window.location="search.php";
             </script>
             <?php
                     }

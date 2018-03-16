@@ -1,3 +1,17 @@
+            </div>
+        </div>
+        <footer class="footer footer-default">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li>
+                            Created by Tushar Anand
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
 </body>
 <!-- Core JS Files  --> 
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
