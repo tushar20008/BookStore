@@ -62,7 +62,7 @@
                     }
             ?>
                 <script type="text/javascript">
-                    window.location="#addMsg";
+                    window.location="books.php#addMsg";
                 </script>
             <?php
                 }

@@ -5,17 +5,17 @@
             <div class="nav-align-center">
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#add" role="tablist" aria-expanded="false" rel="tooltip" title="Add Books" data-placement="bottom">
+                        <a id="addTab" class="nav-link" data-toggle="tab" href="#add" role="tablist" aria-expanded="false" rel="tooltip" title="Add Books" data-placement="bottom">
                             <i class="now-ui-icons ui-1_simple-add"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#pending" role="tablist" aria-expanded="false" rel="tooltip" title="Pending Books" data-placement="bottom">
+                        <a id="pendingTab" class="nav-link" data-toggle="tab" href="#pending" role="tablist" aria-expanded="false" rel="tooltip" title="Pending Books" data-placement="bottom">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#return" role="tablist" aria-expanded="true" rel="tooltip" title="Return Books" data-placement="bottom">
+                        <a id="returnTab" class="nav-link active" data-toggle="tab" href="#return" role="tablist" aria-expanded="true" rel="tooltip" title="Return Books" data-placement="bottom">
                             <i class="now-ui-icons shopping_box"></i>
                         </a>
                     </li>
