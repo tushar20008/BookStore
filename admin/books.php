@@ -25,6 +25,7 @@
         <!-- Tab panes -->
         <div class="tab-content gallery">
             <?php include "return.php"; ?>
+            <?php include "add.php"; ?>
             <div class="tab-pane" id="add" role="tabpanel" aria-expanded="false">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">

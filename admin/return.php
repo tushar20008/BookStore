@@ -6,7 +6,7 @@
         $count = mysqli_num_rows($res);
         if($count == 0){
 ?>
-            <div id="msg" class="alert alert-danger" role="alert">
+            <div id="returnMsg" class="alert alert-danger" role="alert">
                 <div class="container">
                     <div class="alert-icon">
                         <i class="now-ui-icons objects_support-17"></i>
@@ -26,7 +26,7 @@
             mysqli_query($link,"update book_status set status='returned' where bookCode='$id' and username='$username'")or die(mysqli_error($link));
             mysqli_query($link,"update user_registration set booksIssued=booksIssued-1, booksRead=booksRead+1 where username='$username'")or die(mysqli_error($link));
 ?>
-            <div id="msg" class="alert alert-success" role="alert">
+            <div id="returnMsg" class="alert alert-success" role="alert">
                 <div class="container">
                     <div class="alert-icon">
                         <i class="now-ui-icons ui-2_like"></i>

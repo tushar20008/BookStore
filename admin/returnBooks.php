@@ -26,7 +26,7 @@
         echo "<td>" . $row["returnDate"] . "</td>";
         echo 
             "<td> 
-                <a href='books.php?id=". $row["bookCode"] . "&username=". $row["username"] ."#msg' class='text-info' rel='tooltip' title='Return' data-placement='bottom'>
+                <a href='books.php?id=". $row["bookCode"] . "&username=". $row["username"] ."#returnMsg' class='text-info' rel='tooltip' title='Return' data-placement='bottom'>
                     <i class='now-ui-icons ui-1_check'></i>
                 </a> 
             </td>";
