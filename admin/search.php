@@ -35,4 +35,24 @@
             </div>
         </div>
     </div>
+        <script type="text/javascript">
+        if(window.location.href.indexOf('booksTab') > -1){
+            $('.active').removeClass('active');
+            document.getElementById('booksTab').classList.add('active');
+            document.getElementById('book').classList.add('active');
+        }
+        if(window.location.href.indexOf('userTab') > -1){
+            $('.active').removeClass('active');
+            document.getElementById('userTab').classList.add('active');
+            document.getElementById('user').classList.add('active');
+        }
+
+        $("#booksTab").click(function() {
+            window.location="search.php#booksTab";
+        });
+        $("#userTab").click(function() {
+            window.location="search.php#userTab";
+        });
+       
+    </script>
 <?php include "footer.php"; ?>

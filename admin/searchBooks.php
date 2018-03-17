@@ -52,13 +52,6 @@
             echo "</tr>";
             $rowNumber++;
         }
-?>
-    <script type="text/javascript">
-        document.getElementById('booksTab').classList.add('active');
-        document.getElementById('book').classList.add('active');
-        window.location="#searchedBooks";
-    </script>
-<?php
     }
 ?>  
         </tbody>
