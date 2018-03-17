@@ -37,13 +37,13 @@
             echo "<td>" . $row["booksIssued"] . "</td>";
             echo 
                 "<td> 
-                    <a href='editUser.php?username=". $row["username"] . "#editBook' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
+                    <a href='editUser.php?username=". $row["username"] . "#editUser' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-add'></i>
                     </a> 
                 </td>";
             echo 
                 "<td> 
-                    <a href='search.php?username=". $row["username"] . "#booksTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
+                    <a href='search.php?username=". $row["username"] . "#userTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-delete'></i>
                     </a> 
                 </td>";

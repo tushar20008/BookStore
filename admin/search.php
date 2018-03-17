@@ -20,6 +20,7 @@
         <!-- Tab panes -->
         <div class="tab-content gallery">
             <?php include 'deleteBook.php';?>
+            <?php include 'deleteUser.php';?>
             <div class="tab-pane" id="book" role="tabpanel" aria-expanded="false">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
