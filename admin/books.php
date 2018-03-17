@@ -15,7 +15,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a id="returnTab" class="nav-link active" data-toggle="tab" href="#return" role="tablist" aria-expanded="true" rel="tooltip" title="Return Books" data-placement="bottom">
+                        <a id="returnTab" class="nav-link" data-toggle="tab" href="#return" role="tablist" aria-expanded="true" rel="tooltip" title="Return Books" data-placement="bottom">
                             <i class="now-ui-icons shopping_box"></i>
                         </a>
                     </li>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane active" id="return" role="tabpanel" aria-expanded="true">
+            <div class="tab-pane" id="return" role="tabpanel" aria-expanded="true">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
                         <?php include 'returnBooks.php';?>
@@ -49,4 +49,33 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        if(window.location.href.indexOf('returnTab') > -1){
+            $('.active').removeClass('active');
+            document.getElementById('returnTab').classList.add('active');
+            document.getElementById('return').classList.add('active');
+        }
+        if(window.location.href.indexOf('addTab') > -1){
+            $('.active').removeClass('active');
+            document.getElementById('addTab').classList.add('active');
+            document.getElementById('add').classList.add('active');
+        }
+        if(window.location.href.indexOf('pendingTab') > -1){
+            $('.active').removeClass('active');
+            document.getElementById('pendingTab').classList.add('active');
+            document.getElementById('pending').classList.add('active');
+        }
+
+        $("#addTab").click(function() {
+            window.location="books.php#addTab";
+        });
+        $("#pendingTab").click(function() {
+            window.location="books.php#pendingTab";
+        });
+        $("#returnTab").click(function() {
+            window.location="books.php#returnTab";
+        });
+    </script>
 <?php include "footer.php"; ?>
+

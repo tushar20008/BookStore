@@ -62,7 +62,7 @@
                     }
             ?>
                 <script type="text/javascript">
-                    window.location="books.php#addMsg";
+                    document.getElementById('addTab').classList.add('active');
                 </script>
             <?php
                 }
