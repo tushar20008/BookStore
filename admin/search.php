@@ -5,13 +5,13 @@
             <div class="nav-align-center">
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                     <li class="nav-item">
-                        <a id="addTab" class="nav-link" data-toggle="tab" href="#user" role="tablist" aria-expanded="false" rel="tooltip" title="Search Users" data-placement="bottom">
-                            <i class="now-ui-icons ui-1_simple-add"></i>
+                        <a id="booksTab" class="nav-link" data-toggle="tab" href="#book" role="tablist" aria-expanded="false" rel="tooltip" title="Search Books" data-placement="bottom">
+                            <i class="now-ui-icons files_single-copy-04"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a id="pendingTab" class="nav-link" data-toggle="tab" href="#book" role="tablist" aria-expanded="false" rel="tooltip" title="Search Books" data-placement="bottom">
-                            <i class="now-ui-icons design_bullet-list-67"></i>
+                        <a id="userTab" class="nav-link" data-toggle="tab" href="#user" role="tablist" aria-expanded="false" rel="tooltip" title="Search Users" data-placement="bottom">
+                            <i class="now-ui-icons sport_user-run"></i>
                         </a>
                     </li>
                 </ul>
@@ -19,8 +19,6 @@
         </div>
         <!-- Tab panes -->
         <div class="tab-content gallery">
-            <?php include "return.php"; ?>
-            <?php include "add.php"; ?>
             <div class="tab-pane" id="book" role="tabpanel" aria-expanded="false">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
