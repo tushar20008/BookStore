@@ -19,6 +19,7 @@
         </div>
         <!-- Tab panes -->
         <div class="tab-content gallery">
+            <?php include 'delete.php';?>
             <div class="tab-pane" id="book" role="tabpanel" aria-expanded="false">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">

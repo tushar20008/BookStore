@@ -43,7 +43,7 @@
                 </td>";
             echo 
                 "<td> 
-                    <a href='delete.php?id=". $row["bookCode"] . "' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
+                    <a href='search.php?id=". $row["bookCode"] . "#booksTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-delete'></i>
                     </a> 
                 </td>";
