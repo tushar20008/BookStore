@@ -53,17 +53,21 @@
 
                     $res = mysqli_query($link, "select * from add_books where bookCode=$id");
                     $bookInfo = mysqli_fetch_array($res); 
+                    
+                    $count = 0;
+                    $res = mysqli_query($link, "select * from book_status where bookCode='$id' && username='$_SESSION[username]' && status='issued'");
+                    $count = mysqli_num_rows($res);
                     if($bookInfo['qty'] == 0){
                         $isSuccess = false;
                         $errorMessage = 'Book no longer in stock.';
                     }
-
-                    $count = 0;
-                    $res = mysqli_query($link, "select * from book_status where bookCode='$id' && username='$_SESSION[username]' && status='issued'");
-                    $count = mysqli_num_rows($res);
-                    if($count > 0){
+                    else if($count > 0){
                         $isSuccess = false;
                         $errorMessage = 'You already issued this book.';
+                    }
+                    else if($booksIssued > 5){
+                        $isSuccess = false;
+                        $errorMessage = 'Cannot issue more than 5 books.';
                     }
 
                     if(!$isSuccess){
