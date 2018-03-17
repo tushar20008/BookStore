@@ -3,8 +3,10 @@
 <div class="row collections">
     <form method="post" action="">
         <div class="row">
-            <input type="text" value="" placeholder="Username" name="username" class="form-control">
-            <div class="form-group col-sm-6 col-lg-3">
+            <input type="text" value="" placeholder="Username" name="username" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Firstname" name="firstname" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Lastname" name="lastname" class="form-control col-sm-4">
+            <div class="form-group col-sm-6">
                 <button name="submit" class="btn btn-round btn-info">Run Search</button>
             </div>
         </div>
@@ -25,9 +27,9 @@
         <tbody>
 <?php
     $rowNumber = 0;
-    if(isset($_POST["submit"])) {
+    if(isset($_POST["submit"]) && isset($_POST["username"])) {
         $rowNumber = 1;
-        $res=mysqli_query($link,"select * from user_registration where username like('%$_POST[username]%')");
+        $res=mysqli_query($link,"select * from user_registration where username like('%$_POST[username]%') and firstname like('%$_POST[firstname]%') and lastname like('%$_POST[lastname]%')");
         while($row=mysqli_fetch_array($res)){
             echo "<tr>";
             echo "<th scope='row'>". $rowNumber. "</th>";

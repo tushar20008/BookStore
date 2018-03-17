@@ -3,8 +3,10 @@
 <div class="row collections">
     <form method="post" action="">
         <div class="row">
-            <input type="text" value="" placeholder="Book Name" name="bookname" class="form-control">
-            <div class="form-group col-sm-6 col-lg-3">
+            <input type="text" value="" placeholder="Title" name="title" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Author" name="author" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Book Code" name="bookCode" class="form-control col-sm-4">
+            <div class="form-group col-sm-6">
                 <button name="submit" class="btn btn-round btn-info">Run Search</button>
             </div>
         </div>
@@ -25,9 +27,9 @@
         <tbody>
 <?php
     $rowNumber = 0;
-    if(isset($_POST["submit"])) {
+    if(isset($_POST["submit"]) && isset($_POST["bookCode"])) {
         $rowNumber = 1;
-        $res=mysqli_query($link,"select * from add_books where title like('%$_POST[bookname]%')");
+        $res=mysqli_query($link,"select * from add_books where title like('%$_POST[title]%') and author like('%$_POST[author]%') and bookCode like('%$_POST[bookCode]%')");
         while($row=mysqli_fetch_array($res)){
             echo "<tr>";
             echo "<th scope='row'>". $rowNumber. "</th>";
