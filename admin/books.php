@@ -25,13 +25,25 @@
         <!-- Tab panes -->
         <div class="tab-content gallery">
             <div class="tab-pane" id="add" role="tabpanel" aria-expanded="false">
-                <?php include 'addBooks.php';?>
+                <div class="col-md-10 ml-auto mr-auto">
+                    <div class="row collections">
+                        <?php include 'addBooks.php';?>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane" id="pending" role="tabpanel" aria-expanded="false">
-                <?php include 'pendingBooks.php';?>
+                <div class="col-md-10 ml-auto mr-auto">
+                    <div class="row collections">
+                        <?php include 'pendingBooks.php';?>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane active" id="return" role="tabpanel" aria-expanded="true">
-                <?php include 'returnBooks.php';?>
+                <div class="col-md-10 ml-auto mr-auto">
+                    <div class="row collections">
+                        <?php include 'returnBooks.php';?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
