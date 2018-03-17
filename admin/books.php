@@ -38,6 +38,7 @@
                     </div>
                 </div>
             </div>
+            <?php include "return.php"; ?>
             <div class="tab-pane active" id="return" role="tabpanel" aria-expanded="true">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
