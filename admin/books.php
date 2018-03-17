@@ -24,6 +24,7 @@
         </div>
         <!-- Tab panes -->
         <div class="tab-content gallery">
+            <?php include "return.php"; ?>
             <div class="tab-pane" id="add" role="tabpanel" aria-expanded="false">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
@@ -38,7 +39,6 @@
                     </div>
                 </div>
             </div>
-            <?php include "return.php"; ?>
             <div class="tab-pane active" id="return" role="tabpanel" aria-expanded="true">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="row collections">
