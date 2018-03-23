@@ -13,7 +13,7 @@
         <tbody>
 <?php
     $rowNumber = 1;
-    $res=mysqli_query($link,"select * from notification where username='$_SESSION[username]' order by date desc");
+    $res=mysqli_query($link,"select * from notification where username='$_SESSION[username]' order by date desc, id desc");
     while($row=mysqli_fetch_array($res)){
         if(!$row["hasRead"]){
             echo "<tr class='text-danger'>";    
