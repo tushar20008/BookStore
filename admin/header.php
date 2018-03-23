@@ -64,7 +64,7 @@
                         <a class="nav-link" href="search.php#searchBar">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notification.php" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
+                        <a class="nav-link" href="sendNotification.php#notification" rel="tooltip" title="Send Notifications" data-placement="bottom">
                             <i class="now-ui-icons ui-1_email-85"></i>
                         </a>
                     </li> 
