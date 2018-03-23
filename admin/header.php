@@ -55,13 +55,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">       
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="edit.php">Edit Profile</a>
+                        <a class="nav-link" href="edit.php#editProfile">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="books.php">Books</a>
+                        <a class="nav-link" href="books.php#bookBar">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php">Search</a>
+                        <a class="nav-link" href="search.php#searchBar">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="notification.php" rel="tooltip" title="Checkout Notifications" data-placement="bottom">

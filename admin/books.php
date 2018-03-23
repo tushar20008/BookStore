@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
     <div class="row">
         <div class="col-md-6 ml-auto mr-auto">
-            <h4 class="title text-center">Bookbar</h4>
+            <h4 id="bookBar" class="title text-center">Bookbar</h4>
             <div class="nav-align-center">
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                     <li class="nav-item">

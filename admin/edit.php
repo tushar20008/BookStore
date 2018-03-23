@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-    <h3 class="title">Edit Profile</h3>
+    <h3 id="editProfile" class="title">Edit Profile</h3>
     <div class="row">
         <div class="card card-signup" data-background-color="orange">
             <form class="form" enctype="multipart/form-data" method="post" action="">
