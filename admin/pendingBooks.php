@@ -15,7 +15,7 @@
 <?php
     $res = mysqli_query($link, "select * from book_status where status='issued' order by id desc");
     $rowNumber = 1;
-    $todayDate = new DateTime('now');
+    $todayDate = date("Y-m-d");;
     while ($row = mysqli_fetch_array($res)) {
         echo "<tr>";
         echo "<th scope='row'>". $rowNumber. "</th>";
@@ -27,9 +27,8 @@
         echo "<td>" . $row["issueDate"] . "</td>";
         echo "<td>" . $row["returnDate"] . "</td>";
 
-        $date = date_create($row["returnDate"]);
-        $diff = date_diff($date,$todayDate);
-        if($row["returnDate"] < date("Y-m-d")){
+        $diff = date_diff(new DateTime($row["returnDate"]), new DateTime($todayDate));
+        if($row["returnDate"] < $todayDate){
             echo "<td class='text-danger'>". $diff->format("%R%a days") ."</td>";
         }
         else{

@@ -10,7 +10,7 @@
     $aftersevendays = strtotime("+7 day", $today_date);
     $aftersevendays=date('Y-m-d', $aftersevendays);
 ?>
-    <h3 id="searchedBooks" class="title">Checkout</h3>
+    <h3 id="checkoutBook" class="title">Checkout</h3>
     <div class="row">
         <div class="card card-signup" data-background-color="orange">
             <form class="form" enctype="multipart/form-data" method="post" action="">
