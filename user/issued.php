@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-    <h3 class="title">Books Issued</h3>
+    <h3 id="issued" class="title">Books Issued</h3>
     <table class="table">
         <thead>
             <tr>

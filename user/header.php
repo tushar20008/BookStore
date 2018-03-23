@@ -56,16 +56,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">       
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="edit.php">Edit Profile</a>
+                        <a class="nav-link" href="edit.php#editProfile">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php">Search</a>
+                        <a class="nav-link" href="search.php#searchedBooks">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="issued.php">Issued Books</a>
+                        <a class="nav-link" href="issued.php#issued">Issued Books</a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link" href="notification.php" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
+                        <a class="nav-link" href="notification.php#notification" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
                             <i class="now-ui-icons ui-1_email-85"></i>
                         </a>
                     </li> 
