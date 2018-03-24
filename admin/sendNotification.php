@@ -2,7 +2,7 @@
     <h3 id="notification" class="title">Send Notification</h3>
     <div class="row">
         <div class="card card-signup" data-background-color="blue">
-            <form class="form" enctype="multipart/form-data" method="post" action="">
+            <form class="form" enctype="multipart/form-data" method="post" action="send.php">
                 <div class="header text-center">
                     <h4 class="title title-up">Message</h4>
                 </div>
@@ -34,10 +34,10 @@
                 </div>
             </form>
             <?php
-                if(isset($_POST["submit"])){
+                if(isset($_GET["msg"])){
                     $isMissingInfo = false;
 
-                    if(strlen($_POST['title']) == 0 || strlen($_POST['message']) == 0 || $_POST['username'] == '0'){
+                    if($_GET['msg'] == '0'){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }                    
@@ -63,8 +63,6 @@
             <?php     
                     }
                     else{ 
-                        $date = date("Y-m-d");
-                        mysqli_query($link,"insert into notification(id, username, title, message, date) values('','$_POST[username]','$_POST[title]','$_POST[message]','$date')");
             ?>
                         <div class="alert alert-success" role="alert">
                             <div class="container">
@@ -81,11 +79,6 @@
                         </div>
             <?php
                     }
-            ?>
-                <script type="text/javascript">
-                            window.location="#send";
-                </script>
-            <?php
                 }
             ?>
         </div>
