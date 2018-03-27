@@ -15,7 +15,7 @@
     $res = mysqli_query($link, "select * from book_status where username='$_SESSION[username]' && status='issued'");
     $rowNumber = 1;
     while ($row = mysqli_fetch_array($res)) {
-        echo "<tr>";
+        echo "<tr class='bookRow'>";
         echo "<th scope='row'>". $rowNumber. "</th>";
         echo "<td>" . $row["bookCode"] . "</td>";
 

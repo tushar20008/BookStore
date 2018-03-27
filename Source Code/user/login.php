@@ -66,7 +66,7 @@
                     $count=mysqli_num_rows($res);
                     if($count==0){
             ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div id="errorMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>

@@ -9,10 +9,10 @@
                 <input type="text" value="" placeholder="Author" name="author" class="form-control">
             </div>
             <div class="form-group col-sm-6 col-lg-3">
-                <input type="text" value="" placeholder="Book Code" name="bookCode" class="form-control">
+                <input id="bookCode" type="text" value="" placeholder="Book Code" name="bookCode" class="form-control">
             </div>
             <div class="form-group col-sm-6 col-lg-3">
-                <button name="submit" class="btn btn-round btn-info">Run Search</button>
+                <button id="search" name="submit" class="btn btn-round btn-info">Run Search</button>
             </div>
         </div>
     </form>
@@ -43,7 +43,7 @@
             if($row["qty"] > 0){
                 echo 
                 "<td> 
-                    <a href='checkout.php?id=". $row["bookCode"] . "#checkoutBook' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
+                    <a id='checkout' href='checkout.php?id=". $row["bookCode"] . "#checkoutBook' class='text-info' rel='tooltip' title='Borrow' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_check'></i>
                     </a> 
                 </td>";

@@ -16,10 +16,10 @@
     $res=mysqli_query($link,"select * from notification where username='$_SESSION[username]' order by date desc, id desc");
     while($row=mysqli_fetch_array($res)){
         if(!$row["hasRead"]){
-            echo "<tr class='text-danger'>";    
+            echo "<tr class='bookRow text-danger'>";    
         }
         else{
-            echo "<tr>";
+            echo "<tr class='bookRow'>";
         }
         echo "<th scope='row'>". $rowNumber. "</th>";
         echo "<td>" . $row["title"] . "</td>";
@@ -28,7 +28,7 @@
         if(!$row["hasRead"]){
             echo 
             "<td> 
-                <a href='updateNotification.php?id=". $row["id"]."#notification' class='text-info' rel='tooltip' title='Mark Read' data-placement='bottom'>
+                <a id='updateStatus' href='updateNotification.php?id=". $row["id"]."#notification' class='text-info' rel='tooltip' title='Mark Read' data-placement='bottom'>
                     <i class='now-ui-icons ui-1_check'></i>
                 </a> 
             </td>";   
@@ -36,7 +36,7 @@
         else{
             echo 
             "<td> 
-                <a href='updateNotification.php?id=". $row["id"]."#notification' class='text-info' rel='tooltip' title='Mark Unread' data-placement='bottom'>
+                <a id='updateStatus' href='updateNotification.php?id=". $row["id"]."#notification' class='text-info' rel='tooltip' title='Mark Unread' data-placement='bottom'>
                     <i class='now-ui-icons ui-1_simple-remove'></i>
                 </a> 
             </td>";   

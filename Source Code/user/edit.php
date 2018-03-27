@@ -23,11 +23,11 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>First Name :</span>
-                        <input type="text" value=<?php echo $userDetails["firstname"];?> name ="firstname" class="form-control">
+                        <input id="firstname" type="text" value=<?php echo $userDetails["firstname"];?> name ="firstname" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Last Name :</span>
-                        <input type="text" value=<?php echo $userDetails["lastname"];?> name ="lastname" class="form-control">
+                        <input id="lastname" type="text" value=<?php echo $userDetails["lastname"];?> name ="lastname" class="form-control">
                     </div>
                 </div>
                 <div class="footer text-center">
@@ -52,7 +52,7 @@
 
                     if($isMissingInfo){
             ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div id="errorMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -81,7 +81,7 @@
                         
                         
             ?>
-                        <div class="alert alert-success" role="alert">
+                        <div id="successMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

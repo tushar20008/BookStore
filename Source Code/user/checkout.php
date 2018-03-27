@@ -72,7 +72,7 @@
 
                     if(!$isSuccess){
             ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div id="errorMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -96,7 +96,7 @@
                         mysqli_query($link, "update user_registration set booksIssued=booksIssued+1 where username='$_SESSION[username]'") or die(mysqli_error($link));    
                         
             ?>
-                        <div class="alert alert-success" role="alert">
+                        <div id="successMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

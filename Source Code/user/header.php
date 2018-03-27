@@ -56,21 +56,21 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">       
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="edit.php#editProfile">Edit Profile</a>
+                        <a id="editLink" class="nav-link" href="edit.php#editProfile">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php#searchedBooks">Search</a>
+                        <a id="searchLink" class="nav-link" href="search.php#searchedBooks">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="issued.php#issued">Issued Books</a>
+                        <a id="issueLink" class="nav-link" href="issued.php#issued">Issued Books</a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link" href="notification.php#notification" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
+                        <a id="notificationLink" class="nav-link" href="notification.php#notification" rel="tooltip" title="Checkout Notifications" data-placement="bottom">
                             <i class="now-ui-icons ui-1_email-85"></i>
                         </a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php" rel="tooltip" title="Logout" data-placement="bottom">
+                        <a id="logoutLink" class="nav-link" href="logout.php" rel="tooltip" title="Logout" data-placement="bottom">
                             <i class="now-ui-icons media-1_button-power"></i>
                         </a>
                     </li>
@@ -115,5 +115,5 @@
     <div class="section">
             <div class="container">
                 <div class="button-container">
-                    <a href="chatBot.php" target="_blank" class="btn btn-primary btn-round btn-lg">Chat with Us</a>
+                    <a id="chatLink" href="chatBot.php" target="_blank" class="btn btn-primary btn-round btn-lg">Chat with Us</a>
                 </div>
