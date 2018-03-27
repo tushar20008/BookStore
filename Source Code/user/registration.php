@@ -84,7 +84,7 @@
 
                     if($count>0 || $isMissingInfo){
             ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div id="errorMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -106,7 +106,7 @@
                         $pwd=$_POST["password"];
                         mysqli_query($link,"insert into user_registration(id,firstname,lastname,username,password) values('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','$pwd')") or die(mysqli_error($link));
             ?>
-                        <div class="alert alert-success" role="alert">
+                        <div id="successMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>
