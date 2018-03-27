@@ -47,12 +47,12 @@
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="registration.php" class="link">Create Account</a>
+                                <a id="register" href="registration.php" class="link">Create Account</a>
                             </h6>
                         </div>
                         <div class="pull-right">
                             <h6>
-                                <a href="../admin/login.php" class="link">Admin Login</a>
+                                <a id="admin" href="../admin/login.php" class="link">Admin Login</a>
                             </h6>
                         </div>
                     </form>

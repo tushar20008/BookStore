@@ -34,33 +34,33 @@
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons text_caps-small"></i>
                                 </span>
-                                <input type="text" placeholder="First Name..." name="firstname" class="form-control" />
+                                <input type="text" id="firstname" placeholder="First Name..." name="firstname" class="form-control" />
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons text_caps-small"></i>
                                 </span>
-                                <input type="text" placeholder="Last Name..." name="lastname" class="form-control" />
+                                <input type="text" id="lastname" placeholder="Last Name..." name="lastname" class="form-control" />
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons users_circle-08"></i>
                                 </span>
-                                <input type="text" class="form-control" name="username" placeholder="Username...">
+                                <input type="text" id="username" class="form-control" name="username" placeholder="Username...">
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons text_caps-small"></i>
                                 </span>
-                                <input type="text" placeholder="Password..." name="password" class="form-control" />
+                                <input type="text" id="password" placeholder="Password..." name="password" class="form-control" />
                             </div>
                         </div>
                         <div class="footer text-center">
-                            <button name="submit" class="btn btn-primary btn-round btn-lg btn-block">Get Started</button>
+                            <button id="register" name="submit" class="btn btn-primary btn-round btn-lg btn-block">Get Started</button>
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="login.php" class="link">Login</a>
+                                <a id="login" href="login.php" class="link">Login</a>
                             </h6>
                         </div>
                     </form>
