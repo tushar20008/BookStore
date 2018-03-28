@@ -103,7 +103,7 @@
             <?php     
                     }
                     else{
-                        $pwd = md5($_POST["password"]);
+                        $pwd = $_POST["password"];
                         mysqli_query($link,"insert into user_registration(id,firstname,lastname,username,password) values('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','$pwd')") or die(mysqli_error($link));
             ?>
                         <div id="successMsg" class="alert alert-success" role="alert">
