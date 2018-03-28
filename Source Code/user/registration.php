@@ -52,7 +52,7 @@
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons text_caps-small"></i>
                                 </span>
-                                <input type="text" id="password" placeholder="Password..." name="password" class="form-control" />
+                                <input type="password" id="password" placeholder="Password..." name="password" class="form-control" />
                             </div>
                         </div>
                         <div class="footer text-center">
