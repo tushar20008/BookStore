@@ -16,7 +16,7 @@
 
                     if($isMissingInfo){
             ?>
-                        <div id="addMsg" class="alert alert-danger" role="alert">
+                        <div id="errorMsg addMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -45,7 +45,7 @@
                         
                         
             ?>
-                        <div id="addMsg" class="alert alert-success" role="alert">
+                        <div id="successMsg addMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

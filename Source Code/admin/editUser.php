@@ -44,7 +44,7 @@
                 if(isset($_POST["submit"])){
                     $isMissingInfo = false;
 
-                    $res = mysqli_query($link,"select * from user_registration where username='$username'") or die(mysqli_error($link));
+                    $res = mysqli_query($link,"select * from user_registration where username='$_POST[username]'") or die(mysqli_error($link));
                     $count = mysqli_num_rows($res);
 
                     if(strlen($_POST['username']) == 0 || strlen($_POST['password']) == 0 || strlen($_POST['firstname']) == 0 || strlen($_POST['lastname']) == 0){
@@ -83,7 +83,7 @@
                             $imageName = $userDetails["image"];
                         }
                         
-                        mysqli_query($link,"update user_registration set username='$_POST[username]', password='$_POST[password]', firstname='$_POST[firstname]', lastname='$_POST[lastname]', image='$imageName' where username='$_POST[username]'") or die(mysqli_error($link));
+                        mysqli_query($link,"update user_registration set username='$_POST[username]', password='$_POST[password]', firstname='$_POST[firstname]', lastname='$_POST[lastname]', image='$imageName' where username='$username'") or die(mysqli_error($link));
                         mysqli_query($link,"update book_status set username='$_POST[username]'where username='$_POST[username]'") or die(mysqli_error($link));
             ?>
                         <div id="editUserMsg" class="alert alert-success" role="alert">
@@ -91,7 +91,7 @@
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>
                                 </div>
-                                <strong>Well done!</strong> Sucessfully Updated, Refresh to view changes.
+                                <strong>Well done!</strong> Sucessfully Updated, Go Back to make further changes.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>

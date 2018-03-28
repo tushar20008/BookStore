@@ -13,7 +13,7 @@
                             <?php
                                 $res=mysqli_query($link,"select * from user_registration");
                                 while($row=mysqli_fetch_array($res)){
-                                    echo "<option style='color: black' value='".$row['username']."'>";
+                                    echo "<option id=".$row['username']." style='color: black' value='".$row['username']."'>";
                                     echo $row['username'];
                                     echo "</option>";
                                 }
@@ -22,11 +22,11 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Title :</span>
-                        <input type="text" class="form-control" name ="title" value="">
+                        <input type="text" id="title" class="form-control" name ="title" value="">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Message :</span>
-                        <input type="text" class="form-control" name ="message" value="">
+                        <input type="text" id="message" class="form-control" name ="message" value="">
                     </div>
                 </div>
                 <div class="footer text-center">
@@ -44,7 +44,7 @@
 
                     if($isMissingInfo){
             ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div id="errorMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -64,7 +64,7 @@
                     }
                     else{ 
             ?>
-                        <div class="alert alert-success" role="alert">
+                        <div id="successMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

@@ -37,7 +37,7 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <body class="profile-page sidebar-collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
@@ -55,16 +55,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">       
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="edit.php#editProfile">Edit Profile</a>
+                        <a id="editLink" class="nav-link" href="edit.php#editProfile">Edit Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="books.php#bookBar">Books</a>
+                        <a id="bookLink" class="nav-link" href="books.php#bookBar">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php#searchBar">Search</a>
+                        <a id="searchLink" class="nav-link" href="search.php#searchBar">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sendNotification.php#notification" rel="tooltip" title="Send Notifications" data-placement="bottom">
+                        <a id="notificationLink" class="nav-link" href="sendNotification.php#notification" rel="tooltip" title="Send Notifications" data-placement="bottom">
                             <i class="now-ui-icons ui-1_email-85"></i>
                         </a>
                     </li> 

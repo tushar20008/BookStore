@@ -15,7 +15,7 @@
     $res = mysqli_query($link, "select * from book_status where status='issued' order by id desc");
     $rowNumber = 1;
     while ($row = mysqli_fetch_array($res)) {
-        echo "<tr>";
+        echo "<tr class='bookRow'>";
         echo "<th scope='row'>". $rowNumber. "</th>";
         echo "<td>" . $row["username"] . "</td>";
         echo "<td>" . $row["bookCode"] . "</td>";
@@ -26,7 +26,7 @@
         echo "<td>" . $row["returnDate"] . "</td>";
         echo 
             "<td> 
-                <a href='books.php?id=". $row["bookCode"] . "&username=". $row["username"] ."#returnTab' class='text-info' rel='tooltip' title='Return' data-placement='bottom'>
+                <a id='returnBook' href='books.php?id=". $row["bookCode"] . "&username=". $row["username"] ."#returnTab' class='text-info' rel='tooltip' title='Return' data-placement='bottom'>
                     <i class='now-ui-icons ui-1_check'></i>
                 </a> 
             </td>";

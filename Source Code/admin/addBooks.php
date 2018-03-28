@@ -13,19 +13,19 @@
             </div>
             <div class="input-group form-group-no-border">
                 <span class="input-group-addon" style='color: black'>Book Code :</span>
-                <input type="text" class="form-control" name ="bookCode" value="">
+                <input type="text" id="bookCode" class="form-control" name ="bookCode" value="">
             </div>
             <div class="input-group form-group-no-border">
                 <span class="input-group-addon" style='color: black'>Title :</span>
-                <input type="text" value="" name="title" class="form-control">
+                <input type="text" id="title" value="" name="title" class="form-control">
             </div>
             <div class="input-group form-group-no-border">
                 <span class="input-group-addon" style='color: black'>Author :</span>
-                <input type="text" value="" name ="author" class="form-control">
+                <input type="text" id="author" value="" name ="author" class="form-control">
             </div>
             <div class="input-group form-group-no-border">
                 <span class="input-group-addon" style='color: black'>Quantity :</span>
-                <input type="text" value="" name ="qty" class="form-control">
+                <input type="text" id="qty" value="" name ="qty" class="form-control">
             </div>
         </div>
         <div class="footer text-center">

@@ -17,7 +17,7 @@
     $rowNumber = 1;
     $todayDate = date("Y-m-d");;
     while ($row = mysqli_fetch_array($res)) {
-        echo "<tr>";
+        echo "<tr class='bookRow'>";
         echo "<th scope='row'>". $rowNumber. "</th>";
         echo "<td>" . $row["username"] . "</td>";
         echo "<td>" . $row["bookCode"] . "</td>";
