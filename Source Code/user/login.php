@@ -60,7 +60,7 @@
             </div>
             <?php
                 if(isset($_POST["submit"])){
-                    $pwd=$_POST["password"];
+                    $pwd= $_POST["password"];
                     $count=0;
                     $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]' && password='$pwd'");
                     $count=mysqli_num_rows($res);
