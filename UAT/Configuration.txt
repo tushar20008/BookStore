@@ -1,6 +1,7 @@
 To Do : Setup for Windows or Linux
 
-- Install Chrome Driver (Windows is already added by default)
 - Python : sudo apt-get install python
 - Pip : sudo apt-get install python-pip 
 - Selenium : sudo apt-get install python-selenium
+
+To Run allTest.sh : "./allTest.sh" (Linux Command)
