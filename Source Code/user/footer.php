@@ -9,10 +9,18 @@
                         </li>
                     </ul>
                 </nav>
+                <div id="google_translate_element" class="copyright"></div>
             </div>
         </footer>
     </div>
 </body>
+<!-- Google Translate -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!-- Core JS Files  --> 
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
