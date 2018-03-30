@@ -47,7 +47,7 @@
                     $res = mysqli_query($link,"select * from user_registration where username='$_POST[username]'") or die(mysqli_error($link));
                     $count = mysqli_num_rows($res);
 
-                    if(strlen($_POST['username']) == 0 || strlen($_POST['password']) == 0 || strlen($_POST['firstname']) == 0 || strlen($_POST['lastname']) == 0){
+                    if(strlen(trim($_POST['username'])) == 0 || strlen(trim($_POST['password'])) == 0 || strlen(trim($_POST['firstname'])) == 0 || strlen(trim($_POST['lastname'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }

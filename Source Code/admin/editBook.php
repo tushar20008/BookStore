@@ -47,7 +47,7 @@
                     $res = mysqli_query($link,"select * from add_books where bookCode='$id'") or die(mysqli_error($link));
                     $count = mysqli_num_rows($res);
 
-                    if(strlen($_POST['bookCode']) == 0 || strlen($_POST['title']) == 0 || strlen($_POST['author']) == 0 || strlen($_POST['qty']) == 0){
+                    if(strlen(trim($_POST['bookCode'])) == 0 || strlen(trim($_POST['title'])) == 0 || strlen(trim($_POST['author'])) == 0 || strlen(trim($_POST['qty'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }
