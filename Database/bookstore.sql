@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2018 at 05:18 AM
+-- Generation Time: Apr 02, 2018 at 06:15 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -31,11 +31,23 @@ SET time_zone = "+00:00";
 CREATE TABLE `add_books` (
   `id` int(5) NOT NULL,
   `title` varchar(50) NOT NULL,
-  `image` varchar(500) NOT NULL,
+  `image` varchar(500) NOT NULL DEFAULT 'default-book.jpg',
   `author` varchar(50) NOT NULL,
   `bookCode` varchar(10) NOT NULL,
-  `qty` varchar(20) NOT NULL
+  `qty` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONSHIPS FOR TABLE `add_books`:
+--
+
+--
+-- Dumping data for table `add_books`
+--
+
+INSERT INTO `add_books` (`id`, `title`, `image`, `author`, `bookCode`, `qty`) VALUES
+(1, 'issuedTitle', 'default-book.jpg', 'issuedAuthor', 'issuedBook', 10),
+(2, 'title', 'default-book.jpg', 'author', '123', 100);
 
 -- --------------------------------------------------------
 
@@ -51,6 +63,10 @@ CREATE TABLE `admin` (
   `password` varchar(20) NOT NULL,
   `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONSHIPS FOR TABLE `admin`:
+--
 
 --
 -- Dumping data for table `admin`
@@ -74,6 +90,17 @@ CREATE TABLE `book_status` (
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONSHIPS FOR TABLE `book_status`:
+--
+
+--
+-- Dumping data for table `book_status`
+--
+
+INSERT INTO `book_status` (`id`, `username`, `bookCode`, `issueDate`, `returnDate`, `status`) VALUES
+(1, 'tushar', 'issuedBook', '2018-02-27', '2018-03-03', 'issued');
+
 -- --------------------------------------------------------
 
 --
@@ -89,6 +116,17 @@ CREATE TABLE `notification` (
   `hasRead` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONSHIPS FOR TABLE `notification`:
+--
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`id`, `username`, `title`, `message`, `date`, `hasRead`) VALUES
+(1, 'tushar', 'Welcome', 'Hello there :)', '2018-04-02', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -100,11 +138,23 @@ CREATE TABLE `user_registration` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `image` varchar(500) DEFAULT NULL,
   `booksIssued` int(5) NOT NULL DEFAULT '0',
   `booksRead` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONSHIPS FOR TABLE `user_registration`:
+--
+
+--
+-- Dumping data for table `user_registration`
+--
+
+INSERT INTO `user_registration` (`id`, `firstname`, `lastname`, `username`, `password`, `image`, `booksIssued`, `booksRead`) VALUES
+(1, 'tushar', 'anand', 'tushar', 'tushar', NULL, 0, 0),
+(2, 'deleteFirstName', 'deleteLastName', 'deleteUser', 'tushar', NULL, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -148,31 +198,31 @@ ALTER TABLE `user_registration`
 -- AUTO_INCREMENT for table `add_books`
 --
 ALTER TABLE `add_books`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `book_status`
 --
 ALTER TABLE `book_status`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_registration`
 --
 ALTER TABLE `user_registration`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
