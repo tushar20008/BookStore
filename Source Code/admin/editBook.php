@@ -21,15 +21,15 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Book Code :</span>
-                        <input type="text" class="form-control" name ="bookCode" value=<?php echo $bookDetails["bookCode"];?>>
+                        <input type="text" class="form-control" id="bookCode" name="bookCode" value=<?php echo $bookDetails["bookCode"];?>>
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Title :</span>
-                        <input type="text" value=<?php echo $bookDetails["title"];?> name ="title" class="form-control">
+                        <input type="text" value=<?php echo $bookDetails["title"];?> id="title"name="title" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Author :</span>
-                        <input type="text" value=<?php echo $bookDetails["author"];?> name ="author" class="form-control">
+                        <input type="text" value=<?php echo $bookDetails["author"];?> id="author"name="author" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Quantity :</span>
@@ -58,7 +58,7 @@
 
                     if($isMissingInfo){
             ?>
-                        <div id="editBookMsg" class="alert alert-danger" role="alert">
+                        <div id="errorMsg editBookMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -86,7 +86,7 @@
                         mysqli_query($link,"update add_books set title='$_POST[title]', author='$_POST[author]', bookCode='$_POST[bookCode]', qty='$_POST[qty]', image='$imageName' where bookCode='$_POST[bookCode]'") or die(mysqli_error($link));
                         mysqli_query($link,"update book_status set bookCode='$_POST[bookCode]'where bookCode='$_POST[bookCode]'") or die(mysqli_error($link));
             ?>
-                        <div id="editBookMsg" class="alert alert-success" role="alert">
+                        <div id="successMsg editBookMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

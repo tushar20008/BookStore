@@ -21,19 +21,19 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Username :</span>
-                        <input type="text" class="form-control" name ="username" value=<?php echo $userDetails["username"];?>>
+                        <input type="text" class="form-control" id="username" name ="username" value=<?php echo $userDetails["username"];?>>
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Password :</span>
-                        <input type="password" value=<?php echo $userDetails["password"];?> name ="password" class="form-control">
+                        <input type="password" id="password" value=<?php echo $userDetails["password"];?> name ="password" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Firstname :</span>
-                        <input type="text" value=<?php echo $userDetails["firstname"];?> name ="firstname" class="form-control">
+                        <input type="text" id="firstname" value=<?php echo $userDetails["firstname"];?> name ="firstname" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Lastname :</span>
-                        <input type="text" value=<?php echo $userDetails["lastname"];?> name ="lastname" class="form-control">
+                        <input type="text" id="lastname" value=<?php echo $userDetails["lastname"];?> name ="lastname" class="form-control">
                     </div>
                 </div>
                 <div class="footer text-center">
@@ -58,7 +58,7 @@
 
                     if($isMissingInfo){
             ?>
-                        <div id="editUserMsg" class="alert alert-danger" role="alert">
+                        <div id="errorMsg editUserMsg" class="alert alert-danger" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons objects_support-17"></i>
@@ -86,7 +86,7 @@
                         mysqli_query($link,"update user_registration set username='$_POST[username]', password='$_POST[password]', firstname='$_POST[firstname]', lastname='$_POST[lastname]', image='$imageName' where username='$username'") or die(mysqli_error($link));
                         mysqli_query($link,"update book_status set username='$_POST[username]'where username='$_POST[username]'") or die(mysqli_error($link));
             ?>
-                        <div id="editUserMsg" class="alert alert-success" role="alert">
+                        <div id="successMsg editUserMsg" class="alert alert-success" role="alert">
                             <div class="container">
                                 <div class="alert-icon">
                                     <i class="now-ui-icons ui-2_like"></i>

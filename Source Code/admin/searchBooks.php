@@ -3,11 +3,11 @@
 <div class="row collections">
     <form method="post" action="">
         <div class="row">
-            <input type="text" value="" placeholder="Title" name="title" class="form-control col-sm-4">
-            <input type="text" value="" placeholder="Author" name="author" class="form-control col-sm-4">
-            <input type="text" value="" placeholder="Book Code" name="bookCode" class="form-control col-sm-4">
+            <input type="text" value="" id="title" placeholder="Title" name="title" class="form-control col-sm-4">
+            <input type="text" value="" id="author" placeholder="Author" name="author" class="form-control col-sm-4">
+            <input type="text" value="" id="bookCode" placeholder="Book Code" name="bookCode" class="form-control col-sm-4">
             <div class="form-group col-sm-6">
-                <button name="submit" class="btn btn-round btn-info">Run Search</button>
+                <button name="submit" id="searchBook" class="btn btn-round btn-info">Run Search</button>
             </div>
         </div>
     </form>
@@ -39,13 +39,13 @@
             echo "<td>" . $row["author"] . "</td>";
             echo 
                 "<td> 
-                    <a href='editBook.php?id=". $row["bookCode"] . "#editBook' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
+                    <a id='edit' href='editBook.php?id=". $row["bookCode"] . "#editBook' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-add'></i>
                     </a> 
                 </td>";
             echo 
                 "<td> 
-                    <a href='search.php?id=". $row["bookCode"] . "#booksTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
+                    <a id='delete' href='search.php?id=". $row["bookCode"] . "#booksTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-delete'></i>
                     </a> 
                 </td>";

@@ -3,11 +3,11 @@
 <div class="row collections">
     <form method="post" action="">
         <div class="row">
-            <input type="text" value="" placeholder="Username" name="username" class="form-control col-sm-4">
-            <input type="text" value="" placeholder="Firstname" name="firstname" class="form-control col-sm-4">
-            <input type="text" value="" placeholder="Lastname" name="lastname" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Username" id="username" name="username" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Firstname" id="firstname" name="firstname" class="form-control col-sm-4">
+            <input type="text" value="" placeholder="Lastname" id="lastname" name="lastname" class="form-control col-sm-4">
             <div class="form-group col-sm-6">
-                <button name="submit" class="btn btn-round btn-info">Run Search</button>
+                <button id="searchUser" name="submit" class="btn btn-round btn-info">Run Search</button>
             </div>
         </div>
     </form>
@@ -39,13 +39,13 @@
             echo "<td>" . $row["booksIssued"] . "</td>";
             echo 
                 "<td> 
-                    <a href='editUser.php?username=". $row["username"] . "#editUser' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
+                    <a id='edit' href='editUser.php?username=". $row["username"] . "#editUser' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-add'></i>
                     </a> 
                 </td>";
             echo 
                 "<td> 
-                    <a href='search.php?username=". $row["username"] . "#userTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
+                    <a id='delete' href='search.php?username=". $row["username"] . "#userTab' class='text-danger' rel='tooltip' title='Delete' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-delete'></i>
                     </a> 
                 </td>";

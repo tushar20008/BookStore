@@ -6,7 +6,7 @@
         if($count == 0){
             mysqli_query($link, "delete from add_books where bookCode='$id'");
 ?>
-            <div id="deleteMsg successMsg" class="alert alert-success" role="alert">
+            <div id="successMsg deleteMsg" class="alert alert-success" role="alert">
                 <div class="container">
                     <div class="alert-icon">
                         <i class="now-ui-icons ui-2_like"></i>
@@ -23,7 +23,7 @@
         }
         else{
 ?>
-            <div id="deleteMsg errorMsg" class="alert alert-danger" role="alert">
+            <div id="errorMsg deleteMsg" class="alert alert-danger" role="alert">
                 <div class="container">
                     <div class="alert-icon">
                         <i class="now-ui-icons objects_support-17"></i>

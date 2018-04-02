@@ -69,7 +69,7 @@
                         </a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php" rel="tooltip" title="Logout" data-placement="bottom">
+                        <a id="logoutLink" class="nav-link" href="logout.php" rel="tooltip" title="Logout" data-placement="bottom">
                             <i class="now-ui-icons media-1_button-power"></i>
                         </a>
                     </li>
