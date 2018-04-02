@@ -139,7 +139,7 @@ CREATE TABLE `user_registration` (
   `lastname` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `image` varchar(500) DEFAULT NULL,
+  `image` varchar(500) DEFAULT 'default-avatar.png',
   `booksIssued` int(5) NOT NULL DEFAULT '0',
   `booksRead` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

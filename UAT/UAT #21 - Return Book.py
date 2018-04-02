@@ -32,7 +32,7 @@ def runTest():
 	driver.find_element_by_id("returnBook").click()
 
 	try:
-		element_present = EC.presence_of_element_located((By.ID,'successMsg'))
+		element_present = EC.presence_of_element_located((By.ID,'returnMsg successMsg'))
 		WebDriverWait(driver, 1).until(element_present)
 		return 'Pass'
 	except TimeoutException:
