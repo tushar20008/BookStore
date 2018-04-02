@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2018 at 06:15 AM
+-- Generation Time: Apr 02, 2018 at 06:38 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -38,10 +38,6 @@ CREATE TABLE `add_books` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- RELATIONSHIPS FOR TABLE `add_books`:
---
-
---
 -- Dumping data for table `add_books`
 --
 
@@ -61,19 +57,15 @@ CREATE TABLE `admin` (
   `lastname` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `image` varchar(500) NOT NULL
+  `image` varchar(500) NOT NULL DEFAULT 'default-avatar.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `admin`:
---
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `firstname`, `lastname`, `username`, `password`, `image`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', '');
+(1, 'admin', 'admin', 'admin', 'admin', 'default-avatar.png');
 
 -- --------------------------------------------------------
 
@@ -89,10 +81,6 @@ CREATE TABLE `book_status` (
   `returnDate` date NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `book_status`:
---
 
 --
 -- Dumping data for table `book_status`
@@ -115,10 +103,6 @@ CREATE TABLE `notification` (
   `date` date NOT NULL,
   `hasRead` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `notification`:
---
 
 --
 -- Dumping data for table `notification`
@@ -145,16 +129,12 @@ CREATE TABLE `user_registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- RELATIONSHIPS FOR TABLE `user_registration`:
---
-
---
 -- Dumping data for table `user_registration`
 --
 
 INSERT INTO `user_registration` (`id`, `firstname`, `lastname`, `username`, `password`, `image`, `booksIssued`, `booksRead`) VALUES
-(1, 'tushar', 'anand', 'tushar', 'tushar', NULL, 0, 0),
-(2, 'deleteFirstName', 'deleteLastName', 'deleteUser', 'tushar', NULL, 0, 0);
+(1, 'tushar', 'anand', 'tushar', 'tushar', 'default-avatar.png', 1, 0),
+(2, 'deleteFirstName', 'deleteLastName', 'deleteUser', 'tushar', 'default-avatar.png', 0, 0);
 
 --
 -- Indexes for dumped tables
