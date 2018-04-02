@@ -198,7 +198,7 @@ ALTER TABLE `user_registration`
 -- AUTO_INCREMENT for table `add_books`
 --
 ALTER TABLE `add_books`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -210,7 +210,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `book_status`
 --
 ALTER TABLE `book_status`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `notification`
