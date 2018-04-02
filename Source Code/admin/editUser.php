@@ -4,6 +4,9 @@
     $res = mysqli_query($link, "select * from user_registration where username='$username'");
     $userDetails = mysqli_fetch_array($res);
     $image = "../assets/img/profile/" . $userDetails["image"];
+    if(!$userDetails["image"]) {
+        $image = "../assets/img/profile/default-avatar.png";
+    }
 ?>
     <h3 id="editUser" class="title">Edit User</h3>
     <div class="row">
