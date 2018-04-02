@@ -100,5 +100,6 @@
     <div class="section">
             <div class="container">
                 <div class="button-container">
-                    <a href="chatBot.php" target="_blank" class="btn btn-primary btn-round btn-lg">Chat with Us</a>
+                    <br/>
+                    <!-- <a href="chatBot.php" target="_blank" class="btn btn-primary btn-round btn-lg">Chat with Us</a> -->
                 </div>
