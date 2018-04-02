@@ -1,6 +1,6 @@
-# Requirements : Username does not exist 
-# Test : Perform User Registeration
-# Result : Successfully Registered
+# Requirements : Admin already exist 
+# Test : Update Admin information with empty fields
+# Result : Unsuccessful update of information and shows error message
 
 import sys 
 
@@ -18,21 +18,22 @@ testName = testName[0:len(testName)-3]
 webdriverPath = './chromedriver_win32/chromedriver.exe'
 driver = webdriver.Chrome(executable_path=webdriverPath)
 
-firstname = 'Tushar'
-lastname = 'Anand'
-username = 'test'
-password = 'tushar'
+username = 'admin'
+password = 'admin'
+newFirstName = ''
 
 def runTest():
 	driver.get(siteUrl)
-	driver.find_element_by_id("register").click()
-	driver.find_element_by_id("firstname").send_keys(firstname)
-	driver.find_element_by_id("lastname").send_keys(lastname)
+	driver.find_element_by_id("admin").click()
 	driver.find_element_by_id("username").send_keys(username)
 	driver.find_element_by_id("password").send_keys(password)
-	driver.find_element_by_id("register").click()
+	driver.find_element_by_id("login").click()
+	driver.find_element_by_id("editLink").click()
+	driver.find_element_by_id("firstname").clear()
+	driver.find_element_by_id("firstname").send_keys(newFirstName)
+	driver.find_element_by_id("edit").click()
 	try:
-		element_present = EC.presence_of_element_located((By.ID,'successMsg'))
+		element_present = EC.presence_of_element_located((By.ID,'errorMsg'))
 		WebDriverWait(driver, 1).until(element_present)
 		return 'Pass'
 	except TimeoutException:

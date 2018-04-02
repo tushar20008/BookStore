@@ -1,6 +1,6 @@
-# Requirements : Username does not exist 
-# Test : Perform User Registeration
-# Result : Successfully Registered
+# Requirements : Username already exist and Book pending for return
+# Test : View Books to be returned
+# Result : Able to see list of books to return
 
 import sys 
 
@@ -18,24 +18,22 @@ testName = testName[0:len(testName)-3]
 webdriverPath = './chromedriver_win32/chromedriver.exe'
 driver = webdriver.Chrome(executable_path=webdriverPath)
 
-firstname = 'Tushar'
-lastname = 'Anand'
-username = 'test'
-password = 'tushar'
+username = 'admin'
+password = 'admin'
 
 def runTest():
 	driver.get(siteUrl)
-	driver.find_element_by_id("register").click()
-	driver.find_element_by_id("firstname").send_keys(firstname)
-	driver.find_element_by_id("lastname").send_keys(lastname)
+	driver.find_element_by_id("admin").click()
 	driver.find_element_by_id("username").send_keys(username)
 	driver.find_element_by_id("password").send_keys(password)
-	driver.find_element_by_id("register").click()
-	try:
-		element_present = EC.presence_of_element_located((By.ID,'successMsg'))
-		WebDriverWait(driver, 1).until(element_present)
+	driver.find_element_by_id("login").click()
+	driver.find_element_by_id("bookLink").click()
+	driver.find_element_by_id("returnTab").click()
+	row = driver.find_elements_by_class_name("bookRow")
+
+	if len(row) > 0 : 
 		return 'Pass'
-	except TimeoutException:
+	else:
 		return 'Fail'
 
 if runTest() == 'Pass' :
