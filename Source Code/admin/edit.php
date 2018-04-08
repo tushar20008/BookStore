@@ -38,16 +38,25 @@
                 if(isset($_POST["submit"])){
                     $isMissingInfo = false;
 
-                    $res = mysqli_query($link,"select * from admin where username='$_POST[username]'") or die(mysqli_error($link));
-                    $count = mysqli_num_rows($res);
-
                     if(strlen(trim($_POST['username'])) == 0 || strlen(trim($_POST['password'])) == 0 || strlen(trim($_POST['firstname'])) == 0 || strlen(trim($_POST['lastname'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }
-                    else if($count > 0 && $_SESSION["username"] != $_POST['username']){
+                    else if(!preg_match('/[^A-Za-z0-9]/', $_POST['username']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['password']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['firstname']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['lastname'])){
                         $isMissingInfo = true;
-                        $errorMessage = "Someone is using that username.";
+                        $errorMessage = "Make sure all the fields only contain numbers and characters.";
+                    }
+                    else{
+                        $res = mysqli_query($link,"select * from admin where username='$_POST[username]'") or die(mysqli_error($link));
+                        $count = mysqli_num_rows($res);
+                    
+                        if($count > 0 && $_SESSION["username"] != $_POST['username']){
+                            $isMissingInfo = true;
+                            $errorMessage = "Someone is using that username.";
+                        }
                     }
 
                     if($isMissingInfo){

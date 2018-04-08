@@ -44,16 +44,24 @@
                 if(isset($_POST["submit"])){
                     $isMissingInfo = false;
 
-                    $res = mysqli_query($link,"select * from add_books where bookCode='$id'") or die(mysqli_error($link));
-                    $count = mysqli_num_rows($res);
-
                     if(strlen(trim($_POST['bookCode'])) == 0 || strlen(trim($_POST['title'])) == 0 || strlen(trim($_POST['author'])) == 0 || strlen(trim($_POST['qty'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }
-                    else if($count > 0 && $id != $_POST['bookCode']){
+                    else if(!preg_match('/[^A-Za-z0-9]/', $_POST['bookCode']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['title']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['author']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['qty'])){
                         $isMissingInfo = true;
-                        $errorMessage = "Book Code already in use.";
+                        $errorMessage = "Make sure all the fields only contain numbers and characters.";
+                    }
+                    else{
+                        $res = mysqli_query($link,"select * from add_books where bookCode='$id'") or die(mysqli_error($link));
+                        $count = mysqli_num_rows($res);
+                        if($count > 0 && $id != $_POST['bookCode']){
+                            $isMissingInfo = true;
+                            $errorMessage = "Book Code already in use.";
+                        }
                     }
 
                     if($isMissingInfo){
