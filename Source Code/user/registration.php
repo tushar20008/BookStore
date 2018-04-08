@@ -70,16 +70,26 @@
                 if(isset($_POST["submit"])){
 
                     $count=0;
-                    $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]'");
-                    $count=mysqli_num_rows($res);
-
                     $isMissingInfo = false;
-                    if($count>0){
-                        $errorMessage = "Username already exists.";
-                    }
+                    
+                    !preg_match('/[^A-Za-z0-9]/', $_POST['username'])
                     if(strlen(trim($_POST['username'])) == 0 || strlen(trim($_POST['password'])) == 0 || strlen(trim($_POST['firstname'])) == 0 || strlen(trim($_POST['lastname'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
+                    }
+                    else if(!preg_match('/[^A-Za-z0-9]/', $_POST['username']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['password']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['firstname']) && 
+                            !preg_match('/[^A-Za-z0-9]/', $_POST['lastname'])){
+                        $isMissingInfo = true;
+                        $errorMessage = "Make sure all the fields only contain numbers and characters.";
+                    }
+                    else{
+                        $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]'");
+                        $count=mysqli_num_rows($res);
+                        if($count>0){
+                            $errorMessage = "Username already exists.";
+                        }
                     }
 
                     if($count>0 || $isMissingInfo){

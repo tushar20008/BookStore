@@ -62,8 +62,10 @@
                 if(isset($_POST["submit"])){
                     $pwd= $_POST["password"];
                     $count=0;
-                    $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]' && password='$pwd'");
-                    $count=mysqli_num_rows($res);
+                    if (!preg_match('/[^A-Za-z0-9]/', $pwd) && !preg_match('/[^A-Za-z0-9]/', $_POST['username'])){
+                        $res=mysqli_query($link,"select * from user_registration where username='$_POST[username]' && password='$pwd'");
+                        $count=mysqli_num_rows($res);
+                    }
                     if($count==0){
             ?>
                         <div id="errorMsg" class="alert alert-danger" role="alert">
