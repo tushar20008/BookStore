@@ -9,6 +9,13 @@
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }
+                    else if(preg_match('/[^A-Za-z0-9]/', $_POST['bookCode']) && 
+                            preg_match('/[^A-Za-z0-9 ]/', $_POST['title']) && 
+                            preg_match('/[^A-Za-z0-9 ]/', $_POST['author']) && 
+                            preg_match('/[^0-9]/', $_POST['qty'])){
+                        $isMissingInfo = true;
+                        $errorMessage = "Make sure all the fields only contain numbers and characters.";
+                    }
                     else if($count > 0){
                         $isMissingInfo = true;
                         $errorMessage = "Book Code already in use.";
