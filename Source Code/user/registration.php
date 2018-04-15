@@ -72,7 +72,6 @@
                     $count=0;
                     $isMissingInfo = false;
                     
-                    !preg_match('/[^A-Za-z0-9]/', $_POST['username'])
                     if(strlen(trim($_POST['username'])) == 0 || strlen(trim($_POST['password'])) == 0 || strlen(trim($_POST['firstname'])) == 0 || strlen(trim($_POST['lastname'])) == 0){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
