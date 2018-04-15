@@ -1,6 +1,6 @@
 # Requirements : Username already exist and Book pending for return
-# Test : View Books to be returned
-# Result : Able to see list of books to return
+# Test : Return a book
+# Result : Able to return book and see success message
 
 import sys 
 
