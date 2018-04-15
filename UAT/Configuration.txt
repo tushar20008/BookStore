@@ -1,5 +1,6 @@
-To Do : Setup for Windows or Linux
+Requirements: Python and Selenium API
 
+Possible way to install:
 - Python : sudo apt-get install python
 - Pip : sudo apt-get install python-pip 
 - Selenium : sudo apt-get install python-selenium
