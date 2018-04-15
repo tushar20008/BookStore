@@ -51,10 +51,10 @@
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields are entered.";
                     }
-                    else if(!preg_match('/[^A-Za-z0-9]/', $_POST['username']) && 
-                            !preg_match('/[^A-Za-z0-9]/', $_POST['password']) && 
-                            !preg_match('/[^A-Za-z0-9]/', $_POST['firstname']) && 
-                            !preg_match('/[^A-Za-z0-9]/', $_POST['lastname'])){
+                    else if(preg_match('/[^A-Za-z0-9]/', $_POST['username']) && 
+                            preg_match('/[^A-Za-z0-9]/', $_POST['password']) && 
+                            preg_match('/[^A-Za-z0-9]/', $_POST['firstname']) && 
+                            preg_match('/[^A-Za-z0-9]/', $_POST['lastname'])){
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields only contain numbers and characters.";
                     }
