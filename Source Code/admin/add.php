@@ -16,6 +16,10 @@
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields only contain numbers and characters.";
                     }
+                    else if((int)$_POST['qty'] < 0){
+                        $isMissingInfo = true;
+                        $errorMessage = "Book quantity not valid";
+                    }
                     else if($count > 0){
                         $isMissingInfo = true;
                         $errorMessage = "Book Code already in use.";
