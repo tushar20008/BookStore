@@ -55,6 +55,10 @@
                         $isMissingInfo = true;
                         $errorMessage = "Make sure all the fields only contain numbers and characters.";
                     }
+                    else if((int)$_POST['qty'] < 0){
+                        $isMissingInfo = true;
+                        $errorMessage = "Book quantity not valid";
+                    }
                     else{
                         $res = mysqli_query($link,"select * from add_books where bookCode='$id'") or die(mysqli_error($link));
                         $count = mysqli_num_rows($res);
