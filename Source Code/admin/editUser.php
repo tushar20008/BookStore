@@ -62,7 +62,7 @@
                         $res = mysqli_query($link,"select * from user_registration where username='$_POST[username]'") or die(mysqli_error($link));
                         $count = mysqli_num_rows($res);
                     
-                        if($count > 0 && $_SESSION["username"] != $_POST['username']){
+                        if($count > 0 && $username != $_POST['username']){
                             $isMissingInfo = true;
                             $errorMessage = "Someone is using that username.";
                         }
