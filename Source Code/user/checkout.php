@@ -1,7 +1,7 @@
 <?php 
     include "header.php";
     $id = $_GET["id"];
-    $res = mysqli_query($link, "select * from add_books where bookCode=$id");
+    $res = mysqli_query($link, "select * from add_books where bookCode='$id'");
     $bookInfo = mysqli_fetch_array($res); 
     $bookImage = "../assets/img/books/".$bookInfo['image'];
 
