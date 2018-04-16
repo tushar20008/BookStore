@@ -1,10 +1,8 @@
 # Bookstore Management System
 
-Software Requirements:
--	WAMP
--	XAMPP
--	LAMP
--	MAMP
+Software Requirement: Xampp
+
+Note: Xampp can be downloaded from https://www.apachefriends.org/download.html
 
 Installation Steps
 -	Download and Unzip.
