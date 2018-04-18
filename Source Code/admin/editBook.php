@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
 <?php
     $id = $_GET["id"];
-    $res = mysqli_query($link, "select * from add_books where bookCode='$id'");
+    $res = mysqli_query($link, "select * from add_books where id='$id'");
     $bookDetails = mysqli_fetch_array($res);
     $image = "../assets/img/books/" . $bookDetails["image"];
 ?>
@@ -60,9 +60,9 @@
                         $errorMessage = "Book quantity not valid";
                     }
                     else{
-                        $res = mysqli_query($link,"select * from add_books where bookCode='$id'") or die(mysqli_error($link));
+                        $res = mysqli_query($link,"select * from add_books where id!='$id' and bookCode='$_POST[bookCode]'") or die(mysqli_error($link));
                         $count = mysqli_num_rows($res);
-                        if($count > 0 && $id != $_POST['bookCode']){
+                        if($count > 0){
                             $isMissingInfo = true;
                             $errorMessage = "Book Code already in use.";
                         }
@@ -95,8 +95,8 @@
                             $imageName = $bookDetails["image"];
                         }
                         
-                        mysqli_query($link,"update add_books set title='$_POST[title]', author='$_POST[author]', bookCode='$_POST[bookCode]', qty='$_POST[qty]', image='$imageName' where bookCode='$_POST[bookCode]'") or die(mysqli_error($link));
-                        mysqli_query($link,"update book_status set bookCode='$_POST[bookCode]'where bookCode='$_POST[bookCode]'") or die(mysqli_error($link));
+                        mysqli_query($link,"update add_books set title='$_POST[title]', author='$_POST[author]', bookCode='$_POST[bookCode]', qty='$_POST[qty]', image='$imageName' where id='$id'") or die(mysqli_error($link));
+                        mysqli_query($link,"update book_status set bookCode='$_POST[bookCode]'where bookCode='$bookDetails[bookCode]'") or die(mysqli_error($link));
             ?>
                         <div id="successMsg editBookMsg" class="alert alert-success" role="alert">
                             <div class="container">

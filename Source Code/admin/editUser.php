@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
 <?php
     $username = $_GET["username"];
-    $res = mysqli_query($link, "select * from user_registration where username='$username'");
+    $res = mysqli_query($link, "select * from user_registration where id='$username'");
     $userDetails = mysqli_fetch_array($res);
     $image = "../assets/img/profile/" . $userDetails["image"];
     if(!$userDetails["image"]) {
@@ -59,10 +59,10 @@
                         $errorMessage = "Make sure all the fields only contain numbers and characters.";
                     }
                     else{
-                        $res = mysqli_query($link,"select * from user_registration where username='$_POST[username]'") or die(mysqli_error($link));
+                        $res = mysqli_query($link,"select * from user_registration where id!='$username' and username='$_POST[username]'") or die(mysqli_error($link));
                         $count = mysqli_num_rows($res);
                     
-                        if($count > 0 && $username != $_POST['username']){
+                        if($count > 0){
                             $isMissingInfo = true;
                             $errorMessage = "Someone is using that username.";
                         }
@@ -95,8 +95,8 @@
                             $imageName = $userDetails["image"];
                         }
                         
-                        mysqli_query($link,"update user_registration set username='$_POST[username]', password='$_POST[password]', firstname='$_POST[firstname]', lastname='$_POST[lastname]', image='$imageName' where username='$username'") or die(mysqli_error($link));
-                        mysqli_query($link,"update book_status set username='$_POST[username]'where username='$_POST[username]'") or die(mysqli_error($link));
+                        mysqli_query($link,"update user_registration set username='$_POST[username]', password='$_POST[password]', firstname='$_POST[firstname]', lastname='$_POST[lastname]', image='$imageName' where id='$username'") or die(mysqli_error($link));
+                        mysqli_query($link,"update book_status set username='$_POST[username]'where username='$userDetails[username]'") or die(mysqli_error($link));
             ?>
                         <div id="successMsg editUserMsg" class="alert alert-success" role="alert">
                             <div class="container">

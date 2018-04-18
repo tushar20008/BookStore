@@ -39,7 +39,7 @@
             echo "<td>" . $row["author"] . "</td>";
             echo 
                 "<td> 
-                    <a id='edit' href='editBook.php?id=". $row["bookCode"] . "#editBook' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
+                    <a id='edit' href='editBook.php?id=". $row["id"] . "#editBook' class='text-info' rel='tooltip' title='Edit' data-placement='bottom'>
                         <i class='now-ui-icons ui-1_simple-add'></i>
                     </a> 
                 </td>";
