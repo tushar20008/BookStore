@@ -23,12 +23,12 @@
                         <input class="btn btn-primary btn-round" type="file" name="image">
                     </div>
                     <div class="input-group form-group-no-border">
-                        <span class="input-group-addon" style='color: black'>Username :</span>
-                        <input type="text" class="form-control" name ="username" value="<?php echo htmlspecialchars($userDetails['username']);?>">
+                        <span class="input-group-addon" style='color: black'>Username :</span> 
+                        <input id="username" type="text" class="form-control" name ="username" value="<?php echo htmlspecialchars($userDetails['username']);?>">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Password :</span>
-                        <input type="password" value="<?php echo htmlspecialchars($userDetails['password']);?>" name ="password" class="form-control">
+                        <input id="password" type="password" value="<?php echo htmlspecialchars($userDetails['password']);?>" name ="password" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Firstname :</span>
