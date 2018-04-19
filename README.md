@@ -10,7 +10,7 @@ Installation Steps
 
 Database Configuration
 -	Open phpmyadmin
--	Create a database "bookstore
+-	Create a database "bookstore"
 -	Select database "bookstore" and click on Import.
 -	Browser file "bookstore.sql" from db folder(downloaded by you)
 -	Click on "Go" button
