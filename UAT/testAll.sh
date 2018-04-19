@@ -4,3 +4,4 @@
 #
 site='http://localhost/myStore/Source%20Code/user/login.php'
 for f in *.py; do python "$f" "$site"; done
+$SHELL
