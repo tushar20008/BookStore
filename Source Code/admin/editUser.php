@@ -28,7 +28,7 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Password :</span>
-                        <input type="password" value="<?php echo htmlspecialchars($userDetails['password']);?>" class="form-control">
+                        <input type="password" value="<?php echo htmlspecialchars($userDetails['password']);?>" name ="password" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Firstname :</span>
