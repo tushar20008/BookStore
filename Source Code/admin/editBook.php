@@ -21,19 +21,19 @@
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Book Code :</span>
-                        <input type="text" class="form-control" id="bookCode" name="bookCode" value=<?php echo $bookDetails["bookCode"];?>>
+                        <input type="text" class="form-control" id="bookCode" name="bookCode" value="<?php echo htmlspecialchars($bookDetails["bookCode"]);?>">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Title :</span>
-                        <input type="text" value=<?php echo $bookDetails["title"];?> id="title"name="title" class="form-control">
+                        <input type="text" value="<?php echo htmlspecialchars($bookDetails["title"]);?>" id="title" name="title" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Author :</span>
-                        <input type="text" value=<?php echo $bookDetails["author"];?> id="author"name="author" class="form-control">
+                        <input type="text" value="<?php echo htmlspecialchars($bookDetails["author"]);?>" id="author" name="author" class="form-control">
                     </div>
                     <div class="input-group form-group-no-border">
                         <span class="input-group-addon" style='color: black'>Quantity :</span>
-                        <input type="text" value=<?php echo $bookDetails["qty"];?> name ="qty" class="form-control">
+                        <input type="number" value="<?php echo htmlspecialchars($bookDetails["qty"]);?>" name ="qty" class="form-control">
                     </div>
                 </div>
                 <div class="footer text-center">

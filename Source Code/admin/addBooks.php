@@ -25,7 +25,7 @@
             </div>
             <div class="input-group form-group-no-border">
                 <span class="input-group-addon" style='color: black'>Quantity :</span>
-                <input type="text" id="qty" value="" name ="qty" class="form-control">
+                <input type="number" id="qty" value="" name ="qty" class="form-control">
             </div>
         </div>
         <div class="footer text-center">
